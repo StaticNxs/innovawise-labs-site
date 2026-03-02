@@ -1,5 +1,3 @@
-// Scroll Reveal System
-
 document.addEventListener("DOMContentLoaded", function () {
 
   const reveals = document.querySelectorAll('.reveal');
@@ -9,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     reveals.forEach(el => {
       const boxTop = el.getBoundingClientRect().top;
-
       if (boxTop < triggerBottom) {
         el.classList.add('active');
       }
