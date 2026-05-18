@@ -1,140 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Services — InnovaWise Labs</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="assets/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — InnovaWise Labs</title>
+  <meta name="description" content="AI automation, cloud infrastructure, security, and the AxentraWise™ framework for small and medium-sized businesses.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<header class="topbar">
-  <div class="container topbar-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" class="brand-logo" alt="InnovaWise Labs">
-      <span>InnovaWise Labs</span>
-    </a>
-
-    <nav class="nav">
-      <a href="services.html">Services</a>
-      <a href="axentrawise.html">AxentraWise™</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="security.html">Security</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <a href="tel:18882962687" class="top-phone">1-888-296-BOTS</a>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <div class="container hero-panel reveal">
-    <h1>Infrastructure services <span class="grad">deployed with control.</span></h1>
-    <p>
-      Our services are delivered through the <strong>AxentraWise™ Infrastructure Model</strong>.
-      No isolated builds. No tool sprawl. Every deployment is governed, documented, and scalable.
-    </p>
-
-    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn btn-primary" href="contact.html">Book Infrastructure Audit</a>
-      <a class="btn btn-ghost" href="axentrawise.html">AxentraWise™ Overview</a>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link">
+          <span class="brand-icon">⬡</span>
+          <span class="brand-name">InnovaWise <span class="brand-accent">Labs</span></span>
+        </a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="axentrawise.html" class="nav-link">AxentraWise™</a></li>
+        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="security.html" class="nav-link">Security</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="founders.html" class="nav-link">Founders</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="section alt">
-  <div class="container">
-    <h2 class="reveal">Core infrastructure layers</h2>
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-tag">What We Build</span>
+      <h1>Services Built for Operational Excellence</h1>
+      <p>Every engagement is architected around your actual systems, workflows, and goals — not a generic package.</p>
+    </div>
+  </header>
 
-    <div class="grid-2">
-      <div class="card reveal">
-        <h3>Agent Layer Deployment</h3>
-        <p>Internal and customer-facing agents engineered to operate inside controlled boundaries.</p>
-        <ul>
-          <li>Internal execution assistants</li>
-          <li>Customer chat + intake systems</li>
-          <li>Triage and routing modules</li>
-          <li>Role-based knowledge agents</li>
-        </ul>
-      </div>
+  <main class="page-main">
+    <div class="container">
+      <section class="service-detail reveal">
+        <div class="service-detail-icon">⚡</div>
+        <div class="service-detail-content">
+          <h2>AI Automation &amp; Workflow Intelligence</h2>
+          <p>We design and deploy custom AI agents, intelligent workflows, and automation pipelines that eliminate the manual, repetitive work consuming your team's time. Built on the AxentraWise™ framework, every automation is production-hardened, monitored, and designed to compound value over time.</p>
+          <ul class="service-capabilities">
+            <li>Document processing and intelligent data extraction</li>
+            <li>Multi-step approval and routing workflow automation</li>
+            <li>AI-powered scheduling and resource allocation</li>
+            <li>Natural language interfaces for internal operations</li>
+            <li>Integration across CRM, ERP, and communication platforms</li>
+            <li>Custom AI agents for client-facing and internal operations</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Discuss AI Automation</a>
+        </div>
+      </section>
 
-      <div class="card reveal">
-        <h3>Automation Layer Architecture</h3>
-        <p>Workflow orchestration connecting tools, enforcing consistency, and eliminating manual steps.</p>
-        <ul>
-          <li>CRM lifecycle automation</li>
-          <li>Onboarding + delivery pipelines</li>
-          <li>Notifications + handoffs</li>
-          <li>Operational enforcement flows</li>
-        </ul>
-      </div>
+      <section class="service-detail reveal">
+        <div class="service-detail-icon">☁</div>
+        <div class="service-detail-content">
+          <h2>Cloud Infrastructure &amp; Systems Architecture</h2>
+          <p>Enterprise-grade cloud architecture doesn't require enterprise pricing. We design multi-cloud and hybrid infrastructure that performs at scale, deploys with security built in, and operates at a cost structure that makes sense for growing businesses.</p>
+          <ul class="service-capabilities">
+            <li>Multi-cloud and hybrid infrastructure design</li>
+            <li>CI/CD pipeline automation and DevOps implementation</li>
+            <li>Containerization, Kubernetes orchestration</li>
+            <li>Infrastructure as code (Terraform, Pulumi)</li>
+            <li>Disaster recovery and business continuity planning</li>
+            <li>Cost optimization and performance engineering</li>
+          </ul>
+          <a href="contact.html" class="btn-primary">Discuss Infrastructure</a>
+        </div>
+      </section>
 
-      <div class="card reveal">
-        <h3>Data Architecture Engineering</h3>
-        <p>Normalized, validated data models that prevent automation instability and reporting drift.</p>
-        <ul>
-          <li>Schema cleanup + standardization</li>
-          <li>Deduplication + integrity constraints</li>
-          <li>Structured logging models</li>
-          <li>Reporting reliability restoration</li>
-        </ul>
-      </div>
+      <section class="service-detail reveal">
+        <div class="service-detail-icon">🛡</div>
+        <div class="service-detail-content">
+          <h2>Security, Compliance &amp; Zero-Trust Architecture</h2>
+          <p>A security breach isn't just an IT problem — it's an existential event for a growing business. We build comprehensive security postures using zero-trust principles, continuous monitoring, and compliance frameworks that protect you before an incident occurs.</p>
+          <ul class="service-capabilities">
+            <li>Zero-trust network architecture design and deployment</li>
+            <li>Endpoint detection, monitoring, and threat response</li>
+            <li>SOC 2, HIPAA, and PCI DSS readiness assessments</li>
+            <li>Security operations center (SOC) integration</li>
+            <li>Vulnerability assessment and penetration testing coordination</li>
+            <li>Security awareness training and policy development</li>
+          </ul>
+          <a href="security.html" class="btn-primary">Explore Security Services</a>
+        </div>
+      </section>
 
-      <div class="card reveal">
-        <h3>Governance & Control Layer</h3>
-        <p>Access discipline and traceability systems embedded into deployments by design.</p>
-        <ul>
-          <li>Role-based access patterns</li>
-          <li>Audit-aligned event logging</li>
-          <li>Documentation + change control</li>
-          <li>Executive visibility standards</li>
-        </ul>
+      <section class="service-detail reveal">
+        <div class="service-detail-icon">◎</div>
+        <div class="service-detail-content">
+          <h2>AxentraWise™ Framework Deployment</h2>
+          <p>The AxentraWise™ Infrastructure Model is our proprietary framework that unifies AI automation, cloud infrastructure, security, and operational intelligence into a single coherent architecture. It's how we deliver enterprise-grade outcomes at SMB velocity and budget.</p>
+          <ul class="service-capabilities">
+            <li>Full-stack AI, infrastructure, and security integration</li>
+            <li>Modular deployment by capability tier and readiness</li>
+            <li>Continuous performance optimization and monitoring</li>
+            <li>Executive dashboards and real-time operational reporting</li>
+            <li>Quarterly architecture reviews and roadmap planning</li>
+            <li>Dedicated systems architect support</li>
+          </ul>
+          <a href="axentrawise.html" class="btn-primary">Explore AxentraWise™</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal">
+        <span class="section-tag">Get Started</span>
+        <h2>Start With a Free Systems Audit</h2>
+        <p>We spend 90 minutes mapping your infrastructure, identifying automation opportunities, and delivering a strategic deployment plan — at no cost, no obligation.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary btn-large">Book Your Free Audit</a>
+          <a href="tel:18882962687" class="btn-outline btn-large">1-888-296-BOTS</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <h2 class="reveal">Engagement structure</h2>
-
-    <div class="grid-3">
-      <div class="card reveal">
-        <h3>Phase 1 — Audit</h3>
-        <p>Identify fragmentation, bottlenecks, drift, and the highest-impact stabilization targets.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="brand-icon">⬡</span>
+            <span>InnovaWise <strong>Labs</strong></span>
+          </div>
+          <p class="footer-tagline">Strategic execution powers intelligent infrastructure.</p>
+          <p class="footer-contact"><a href="tel:18882962687">1-888-296-BOTS</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Cloud Infrastructure</a></li>
+            <li><a href="security.html">Security &amp; Compliance</a></li>
+            <li><a href="axentrawise.html">AxentraWise™ Framework</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="founders.html">Founders</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="security.html">Security Practices</a></li>
+            <li><a href="axentrawise.html">Framework Docs</a></li>
+            <li><a href="contact.html">Get a Systems Audit</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="card reveal">
-        <h3>Phase 2 — Blueprint</h3>
-        <p>Define architecture layers, boundaries, governance controls, and measurable outcomes.</p>
-      </div>
-      <div class="card reveal">
-        <h3>Phase 3 — Deployment</h3>
-        <p>Implement, validate, document, and scale with controlled expansion.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 InnovaWise Labs. All rights reserved.</span>
+        <span>Strategic execution powers intelligent infrastructure.</span>
       </div>
     </div>
-
-    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap" class="reveal">
-      <a class="btn btn-primary" href="contact.html">Request Audit</a>
-      <a class="btn btn-ghost" href="security.html">Security & Governance</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    © <span id="year"></span> InnovaWise Labs • 1-888-296-BOTS
-  </div>
-</footer>
-
-</main>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script src="main.js"></script>
+  </footer>
+  <script src="main.js"></script>
 </body>
 </html>
