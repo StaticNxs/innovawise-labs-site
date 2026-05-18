@@ -1,517 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>InnovaWise Labs — AI Infrastructure for Growing Businesses</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="InnovaWise Labs deploys enterprise-grade AI systems for small and medium-sized businesses through the proprietary AxentraWise™ Infrastructure Model.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnovaWise Labs — AI Infrastructure for Growing Businesses</title>
+  <meta name="description" content="InnovaWise Labs deploys enterprise-grade AI automation, intelligent workflows, and cloud infrastructure for small and medium-sized businesses. Powered by the AxentraWise™ framework.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/logo.png">
-  <style>
-    /* ── Hero Typing Effect ── */
-    .typed-cursor{display:inline-block;width:3px;background:var(--cyan);animation:blink .7s step-end infinite;vertical-align:middle;height:1em;margin-left:4px;border-radius:2px}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    /* ── Particle Canvas ── */
-    #particle-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-
-    /* ── Hero ── */
-    .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
-    .hero .container{position:relative;z-index:1}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,191,255,.08);border:1px solid rgba(0,191,255,.2);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
-    .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite}
-    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,229,255,.4)}50%{box-shadow:0 0 0 8px rgba(0,229,255,0)}}
-    .hero h1{font-size:clamp(2.8rem,4vw+1rem,4.4rem);font-weight:900;line-height:1.04;margin:0 0 24px}
-    .hero-sub{font-size:1.15rem;max-width:580px;line-height:1.75;margin-bottom:40px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
-    .hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-    .hero-trust-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
-    .hero-trust-badges{display:flex;gap:12px}
-    .trust-badge{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:11px;font-weight:600;opacity:.75}
-
-    /* ── Stats Strip ── */
-    .stats-strip{background:rgba(0,191,255,.04);border-top:1px solid rgba(0,191,255,.12);border-bottom:1px solid rgba(0,191,255,.12);padding:48px 0}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-    .stat-item .stat-num{font-size:clamp(2rem,2.5vw,2.8rem);font-weight:900;background:var(--grad);-webkit-background-clip:text;color:transparent}
-    .stat-item .stat-label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:6px}
-
-    /* ── Section Labels ── */
-    .section-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
-    .section-title{font-size:clamp(1.8rem,1.5vw+1rem,2.4rem);font-weight:900;margin:0 0 16px}
-    .section-sub{max-width:560px;line-height:1.7;margin-bottom:48px}
-
-    /* ── Why AxentraWise ── */
-    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
-    .feature-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;transition:.3s ease;position:relative;overflow:hidden}
-    .feature-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:.3s ease}
-    .feature-card:hover{border-color:rgba(0,191,255,.4);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,191,255,.15)}
-    .feature-card:hover::before{opacity:.04}
-    .feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,191,255,.1);border:1px solid rgba(0,191,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
-    .feature-card h3{font-size:1rem;font-weight:800;margin:0 0 10px}
-    .feature-card p{font-size:.9rem;line-height:1.65;margin:0}
-
-    /* ── Services Section ── */
-    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .service-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:36px;display:flex;gap:20px;transition:.3s ease}
-    .service-card:hover{border-color:rgba(0,191,255,.35);box-shadow:0 12px 40px rgba(0,191,255,.12);transform:translateY(-4px)}
-    .service-icon{width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,rgba(26,31,113,.6),rgba(0,191,255,.15));border:1px solid rgba(0,191,255,.2);display:flex;align-items:center;justify-content:center;font-size:24px}
-    .service-body h3{font-size:1rem;font-weight:800;margin:0 0 8px}
-    .service-body p{font-size:.875rem;line-height:1.65;margin:0 0 16px}
-    .service-tag{display:inline-block;background:rgba(0,191,255,.08);border:1px solid rgba(0,191,255,.18);border-radius:20px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
-
-    /* ── SMB Promise Section ── */
-    .promise-section{background:linear-gradient(135deg,rgba(26,31,113,.25),rgba(0,191,255,.06));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .promise-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:20px}
-    .promise-list li{display:flex;gap:16px;align-items:flex-start}
-    .promise-check{width:28px;height:28px;min-width:28px;border-radius:8px;background:rgba(0,229,255,.12);border:1px solid rgba(0,229,255,.25);display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:2px}
-    .promise-list h4{font-size:.95rem;font-weight:800;margin:0 0 4px}
-    .promise-list p{font-size:.875rem;margin:0;line-height:1.6}
-    .promise-visual{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative}
-    .promise-visual-inner{display:flex;flex-direction:column;gap:16px}
-    .pv-row{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px}
-    .pv-label{font-size:.8rem;font-weight:600;opacity:.65}
-    .pv-value{font-size:.85rem;font-weight:800;color:var(--cyan)}
-    .pv-bar{height:4px;border-radius:2px;background:var(--grad);margin-top:6px}
-
-    /* ── Testimonials ── */
-    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .testimonial-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;transition:.3s ease}
-    .testimonial-card:hover{border-color:rgba(0,191,255,.3);transform:translateY(-4px)}
-    .testimonial-stars{color:#FFB800;font-size:14px;margin-bottom:16px;letter-spacing:2px}
-    .testimonial-text{font-size:.9rem;line-height:1.7;font-style:italic;margin:0 0 24px}
-    .testimonial-author{display:flex;align-items:center;gap:12px}
-    .testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
-    .testimonial-name{font-size:.875rem;font-weight:700}
-    .testimonial-role{font-size:.775rem;opacity:.55;margin-top:2px}
-
-    /* ── CTA Section ── */
-    .cta-section{text-align:center;padding:120px 0}
-    .cta-badge{display:inline-block;background:rgba(0,191,255,.08);border:1px solid rgba(0,191,255,.2);border-radius:50px;padding:8px 20px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
-    .cta-section h2{font-size:clamp(2rem,2.5vw+1rem,3rem);font-weight:900;margin:0 0 20px}
-    .cta-section p{max-width:520px;margin:0 auto 40px;line-height:1.75;font-size:1.05rem}
-    .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-    /* ── Footer ── */
-    .footer{background:rgba(0,0,0,.3);border-top:1px solid var(--border);padding:60px 0 32px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-    .footer-brand p{font-size:.875rem;line-height:1.7;margin:12px 0 20px}
-    .footer-col h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin:0 0 16px}
-    .footer-col a{display:block;font-size:.875rem;opacity:.65;margin-bottom:10px;transition:.2s}
-    .footer-col a:hover{opacity:1;color:var(--cyan)}
-    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;opacity:.45}
-
-    /* ── Reveal Animations ── */
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-    .reveal.active{opacity:1;transform:translateY(0)}
-    .reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
-    .reveal-left.active{opacity:1;transform:translateX(0)}
-    .reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
-    .reveal-right.active{opacity:1;transform:translateX(0)}
-
-    /* ── Responsive ── */
-    @media(max-width:900px){
-      .features-grid,.services-grid,.stats-grid,.testimonials-grid,.promise-grid,.footer-grid{grid-template-columns:1fr}
-      .promise-visual{display:none}
-    }
-    </style>
-  </head>
-  <body>
-
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="index.html">
-          <img src="assets/logo.png" class="brand-logo" alt="InnovaWise Labs">
-          <span>InnovaWise Labs</span>
-        </a>a>
-      <nav class="nav">
-      <a href="services.html">Services</a>a>
-      <a href="axentrawise.html">AxentraWise&#8482;</a>a>
-      <a href="case-studies.html">Case Studies</a>a>
-      <a href="about.html">About</a>a>
-      <a href="founders.html">Founders</a>a>
-      <a href="security.html">Security</a>a>
-      <a href="contact.html">Contact</a>a>
-      </nav>nav>
-      <a href="tel:18882962687" class="top-phone">1-888-296-BOTS</a>a>
-      </div>div>
-    </header>header>
-  
-  <main>
-
-    <!-- ══════════ HERO ══════════ -->
-    <section class="hero">
-      <canvas id="particle-canvas"></canvas>canvas>
-      <div class="container">
-        <div class="hero-eyebrow"><span></span>AI Infrastructure for SMBs</div>div>
-        <h1>
-          <span id="typed-heading">Enterprise-grade AI.</span><span class="typed-cursor"></span><br>
-          <span class="grad">Built for your business.</span>
-        </h1>
-        <p class="hero-sub">
-          InnovaWise Labs gives small and medium-sized businesses access to the same
-          intelligent infrastructure that powers enterprise operations —
-          through the proprietary <strong>AxentraWise&#8482; Infrastructure Model</strong>.
-        </p>p>
-      <div class="hero-actions">
-      <a class="btn btn-primary" href="contact.html">Book a Free Infrastructure Audit</a>a>
-      <a class="btn btn-ghost" href="axentrawise.html">Explore the Framework</a>a>
-      </div>div>
-      <div class="hero-trust">
-      <span class="hero-trust-label">Trusted by</span>
-      <div class="hero-trust-badges">
-      <span class="trust-badge">&#128274; SOC 2 Aligned</span>
-      <span class="trust-badge">&#9889; Rapid Deployment</span>
-      <span class="trust-badge">&#127919; SMB Focused</span>
-      </div>div>
-      </div>div>
-      </div>div>
-    </section>section>
-  
-  <!-- ══════════ STATS STRIP ══════════ -->
-  <section class="stats-strip">
-  <div class="container">
-  <div class="stats-grid">
-  <div class="stat-item reveal">
-  <div class="stat-num" data-target="50" data-suffix="+">0+</div>div>
-  <div class="stat-label">Businesses Deployed</div>div>
-  </div>div>
-  <div class="stat-item reveal">
-  <div class="stat-num" data-target="99" data-suffix="%">0%</div>div>
-  <div class="stat-label">System Uptime SLA</div>div>
-  </div>div>
-  <div class="stat-item reveal">
-  <div class="stat-num" data-target="72" data-suffix="h">0h</div>div>
-  <div class="stat-label">Avg. Deployment Time</div>div>
-  </div>div>
-  <div class="stat-item reveal">
-  <div class="stat-num" data-target="3" data-suffix="x">0x</div>div>
-  <div class="stat-label">Avg. Efficiency Gain</div>div>
-  </div>div>
-  </div>div>
-  </div>div>
-  </section>section>
-  
-  <!-- ══════════ WHY AXENTRAWISE ══════════ -->
-  <section class="section alt">
-  <div class="container">
-  <span class="section-label reveal">The Framework</span>
-  <h2 class="section-title reveal">Why AxentraWise&#8482;</h2>
-  <p class="section-sub reveal">
-  Most AI vendors sell you a tool. We deploy a system —
-  governed, aligned to your goals, and built to scale as your business grows.
-  </p>p>
-  <div class="features-grid">
-  <div class="feature-card reveal">
-  <div class="feature-icon">&#127760;</div>div>
-  <h3>Governance by Design</h3>
-  <p>Controls aren't bolted on after the fact. Every deployment is architected with oversight, auditability, and accountability baked in from day one.</p>
-  </div>div>
-  <div class="feature-card reveal">
-  <div class="feature-icon">&#127919;</div>div>
-  <h3>Execution Alignment</h3>
-  <p>We define measurable performance targets before a single line is deployed. No vague promises — just systems that deliver against agreed outcomes.</p>
-  </div>div>
-  <div class="feature-card reveal">
-  <div class="feature-icon">&#9650;</div>div>
-  <h3>Scalable Infrastructure</h3>
-  <p>Your AI systems grow with you. Whether you're at 5 employees or 500, the architecture expands cleanly without operational drift or re-engineering.</p>
-  </div>div>
-  </div>div>
-  </div>div>
-  </section>section>
-  
-  <!-- ══════════ SERVICES ══════════ -->
-  <section class="section">
-  <div class="container">
-  <span class="section-label reveal">What We Build</span>
-  <h2 class="section-title reveal">AI Systems That Work For You</h2>
-  <p class="section-sub reveal">
-    From intelligent automation to AI-assisted operations, we deploy solutions sized for your business — not repurposed enterprise bloatware.
-  </p>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">&#129302;</div>div>
-        <div class="service-body">
-          <h3>Intelligent Automation</h3>
-          <p>Eliminate repetitive manual work across your operations. We deploy AI workflows that handle scheduling, data entry, follow-ups, and reporting — so your team focuses on what matters.</p>
-          <span class="service-tag">Operations</span>
-        </div>div>
-      </div>div>
-      <div class="service-card reveal">
-        <div class="service-icon">&#128200;</div>div>
-        <div class="service-body">
-          <h3>AI-Powered Analytics</h3>
-          <p>Turn your business data into actionable intelligence. Our analytics infrastructure surfaces trends, forecasts demand, and delivers dashboards your team actually uses.</p>
-          <span class="service-tag">Business Intelligence</span>
-        </div>div>
-      </div>div>
-      <div class="service-card reveal">
-        <div class="service-icon">&#128483;</div>div>
-        <div class="service-body">
-          <h3>Conversational AI Systems</h3>
-          <p>Deploy AI-driven customer engagement that operates 24/7. Intelligent chat, support automation, and lead qualification — all governed under the AxentraWise&#8482; model.</p>
-          <span class="service-tag">Customer Experience</span>
-        </div>div>
-      </div>div>
-      <div class="service-card reveal">
-        <div class="service-icon">&#128272;</div>div>
-        <div class="service-body">
-          <h3>Secure AI Infrastructure</h3>
-          <p>Enterprise-grade security posture for every deployment. Access controls, audit trails, and compliance-aligned architecture that protects your data and your clients'.</p>
-          <span class="service-tag">Security</span>
-        </div>div>
-      </div>div>
-    </div>div>
-  </div>div>
-  </section>section>
-
-    <!-- ══════════ SMB PROMISE ══════════ -->
-    <section class="section promise-section">
-      <div class="container">
-        <div class="promise-grid">
-          <div>
-            <span class="section-label reveal-left">Built Different</span>
-            <h2 class="section-title reveal-left">Enterprise Power.<br>SMB Reality.</h2>
-            <p class="reveal-left" style="margin-bottom:32px;line-height:1.75">
-              Most AI platforms are built for companies with dedicated IT teams and seven-figure tech budgets.
-              InnovaWise Labs was founded specifically to close that gap.
-            </p>p>
-            <ul class="promise-list">
-              <li class="reveal-left">
-                <div class="promise-check">&#10003;</div>
-                <div>
-                  <h4>No Enterprise Tax</h4>
-                <p>You get the same architecture quality as Fortune 500 deployments — without the Fortune 500 price tag.</p>
-                </div>
-              </li>li>
-            <li class="reveal-left">
-            <div class="promise-check">&#10003;</div>
-            <div>
-            <h4>Hands-On Deployment</h4>
-            <p>We don't hand you a SaaS login and wish you luck. We architect, deploy, and support your systems directly.</p>
-            </div>
-            </li>li>
-            <li class="reveal-left">
-            <div class="promise-check">&#10003;</div>
-            <div>
-            <h4>Outcome-First Approach</h4>
-            <p>Every engagement starts with your business goals. Technology is the tool — results are the product.</p>
-            </div>
-            </li>li>
-            </ul>ul>
-          </div>
-        <div class="promise-visual reveal-right">
-        <div class="promise-visual-inner">
-        <div style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.45;margin-bottom:4px">AxentraWise&#8482; System Status</div>
-        <div class="pv-row">
-        <span class="pv-label">Deployment Health</span>
-        <span class="pv-value">Operational</span>
-        </div>
-        <div style="padding:0 18px 4px"><div class="pv-bar" style="width:96%"></div></div>
-        <div class="pv-row">
-        <span class="pv-label">Governance Controls</span>
-        <span class="pv-value">Active</span>
-        </div>
-        <div style="padding:0 18px 4px"><div class="pv-bar" style="width:100%"></div></div>
-        <div class="pv-row">
-        <span class="pv-label">Performance Alignment</span>
-        <span class="pv-value">On Target</span>
-        </div>
-        <div style="padding:0 18px 4px"><div class="pv-bar" style="width:88%"></div></div>
-        <div class="pv-row">
-        <span class="pv-label">System Uptime</span>
-        <span class="pv-value">99.9%</span>
-        </div>
-        <div style="padding:0 18px 4px"><div class="pv-bar" style="width:99%"></div></div>
-        </div>
-        </div>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link">
+          <span class="brand-icon">⬡</span>
+          <span class="brand-name">InnovaWise <span class="brand-accent">Labs</span></span>
+        </a>
       </div>
-    </section>section>
-  
-  <!-- ══════════ TESTIMONIALS ══════════ -->
-  <section class="section alt">
-  <div class="container">
-  <span class="section-label reveal">Client Results</span>
-  <h2 class="section-title reveal">What Business Owners Say</h2>
-  <div class="testimonials-grid" style="margin-top:40px">
-  <div class="testimonial-card reveal">
-  <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-  <p class="testimonial-text">"We went from manually processing 200+ orders a week to a fully automated pipeline. The InnovaWise team had us live in under a week. The ROI was immediate."</p>
-  <div class="testimonial-author">
-  <div class="testimonial-avatar">MR</div>
-  <div>
-  <div class="testimonial-name">Marcus R.</div>
-  <div class="testimonial-role">Owner, E-Commerce &amp; Logistics</div>
-  </div>
-  </div>
-  </div>
-  <div class="testimonial-card reveal">
-  <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-  <p class="testimonial-text">"I didn't think AI was for a business my size. InnovaWise Labs proved me wrong. The AI system they built handles our client intake 24/7 and never misses a lead."</p>
-  <div class="testimonial-author">
-  <div class="testimonial-avatar">ST</div>
-  <div>
-  <div class="testimonial-name">Sandra T.</div>
-  <div class="testimonial-role">Founder, Professional Services Firm</div>
-  </div>
-  </div>
-  </div>
-  <div class="testimonial-card reveal">
-  <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-  <p class="testimonial-text">"The governance model alone was worth it. We're in a regulated industry — knowing our AI systems have audit trails and controls built in gave us confidence to move fast."</p>
-  <div class="testimonial-author">
-  <div class="testimonial-avatar">DL</div>
-  <div>
-  <div class="testimonial-name">David L.</div>
-  <div class="testimonial-role">CEO, Healthcare Services SMB</div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section>section>
-  
-  <!-- ══════════ CTA ══════════ -->
-  <section class="cta-section">
-  <div class="container">
-  <div class="cta-badge reveal">Get Started Today</div>
-  <h2 class="reveal">Your business deserves<br>intelligent infrastructure.</h2>
-  <p class="reveal">
-    Book a free infrastructure audit. We'll assess your current operations,
-    identify where AI can deliver the highest impact, and show you exactly what a deployment looks like.
-    No sales pitch. No commitment. Just clarity.
-  </p>
-    <div class="cta-actions reveal">
-      <a class="btn btn-primary" href="contact.html">Book Free Audit</a>a>
-      <a class="btn btn-ghost" href="about.html">Learn About Us</a>a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="axentrawise.html" class="nav-link">AxentraWise™</a></li>
+        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="security.html" class="nav-link">Security</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="founders.html" class="nav-link">Founders</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-  </section>section>
+  </nav>
 
-  </main>
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Powered by AxentraWise™</span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="typing-line" id="typingText"></span>
+        <span class="headline-static">for Growing Businesses</span>
+      </h1>
+      <p class="hero-subtext">
+        We architect and deploy AI automation, intelligent workflows, and cloud infrastructure that enterprise companies use — sized and priced for the businesses that actually build the economy.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Book a Free Systems Audit</a>
+        <a href="axentrawise.html" class="btn-secondary">Explore AxentraWise™</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-item">✓ No long-term lock-in</span>
+        <span class="trust-item">✓ Deployed in days, not months</span>
+        <span class="trust-item">✓ SOC 2-aligned infrastructure</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="infra-diagram">
+        <div class="infra-node node-center pulse">AI Core</div>
+        <div class="infra-node node-top">Automation</div>
+        <div class="infra-node node-right">Cloud</div>
+        <div class="infra-node node-bottom">Security</div>
+        <div class="infra-node node-left">Analytics</div>
+        <div class="infra-line line-top"></div>
+        <div class="infra-line line-right"></div>
+        <div class="infra-line line-bottom"></div>
+        <div class="infra-line line-left"></div>
+      </div>
+    </div>
+  </header>
 
-    <!-- ══════════ FOOTER ══════════ -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a class="brand" href="index.html" style="display:inline-flex">
-              <img src="assets/logo.png" class="brand-logo" alt="InnovaWise Labs">
-              <span>InnovaWise Labs</span>
-            </a>a>
-            <p>Enterprise-grade AI infrastructure for small and medium-sized businesses. Governed, scalable, and performance-aligned from day one.</p>
-            <a href="tel:18882962687" style="font-size:.875rem;font-weight:700;color:var(--cyan)">1-888-296-BOTS</a>a>
-          </div>
-          <div class="footer-col">
-            <h4>Platform</h4>
-            <a href="axentrawise.html">AxentraWise&#8482;</a>a>
-            <a href="services.html">Services</a>a>
-            <a href="security.html">Security</a>a>
-            <a href="case-studies.html">Case Studies</a>a>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="about.html">About</a>a>
-            <a href="founders.html">Founders</a>a>
-            <a href="contact.html">Contact</a>a>
-          </div>
-          <div class="footer-col">
-            <h4>Get Started</h4>
-            <a href="contact.html">Book an Audit</a>a>
-            <a href="contact.html">Free Consultation</a>a>
-          </div>
+  <!-- Stats Section -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="94">0</div>
+          <div class="stat-suffix">%</div>
+          <div class="stat-label">Average Task Automation Rate</div>
         </div>
-        <div class="footer-bottom">
-          <span>&copy; 2026 InnovaWise Labs. All rights reserved.</span>
-        <span>Strategic execution powers intelligent infrastructure.</span>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-suffix">x</div>
+          <div class="stat-label">Faster Deployment vs. Enterprise Vendors</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="60">0</div>
+          <div class="stat-suffix">%</div>
+          <div class="stat-label">Average Operational Cost Reduction</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="48">0</div>
+          <div class="stat-suffix">hr</div>
+          <div class="stat-label">From Audit to Active Deployment</div>
         </div>
       </div>
-    </footer>footer>
-  
-  <script src="main.js"></script>
-  <script>
-    // ── Particle Background ──
-    (function(){
-      const canvas=document.getElementById('particle-canvas');
-      const ctx=canvas.getContext('2d');
-      let particles=[];
-      function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight}
-      resize();window.addEventListener('resize',resize);
-      for(let i=0;i<60;i++){
-        particles.push({
-          x:Math.random()*canvas.width,y:Math.random()*canvas.height,
-          vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
-          r:Math.random()*1.5+.5,a:Math.random()*.4+.1
-        });
-      }
-      function draw(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        particles.forEach(p=>{
-          p.x+=p.vx;p.y+=p.vy;
-          if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
-          if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
-          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-          ctx.fillStyle=`rgba(0,191,255,${p.a})`;ctx.fill();
-        });
-        particles.forEach((a,i)=>{
-          particles.slice(i+1).forEach(b=>{
-            const d=Math.hypot(a.x-b.x,a.y-b.y);
-            if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
-                      ctx.strokeStyle=`rgba(0,191,255,${.12*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();}
-          });
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
+    </div>
+  </section>
 
-    // ── Typing Effect ──
-    (function(){
-      const el=document.getElementById('typed-heading');
-      const phrases=['Enterprise-grade AI.','Intelligent automation.','Governed infrastructure.','Built for your business.'];
-      let pi=0,ci=0,deleting=false;
-      function type(){
-        const phrase=phrases[pi];
-        if(!deleting){
-          el.textContent=phrase.slice(0,ci+1);ci++;
-          if(ci===phrase.length){setTimeout(()=>{deleting=true;type()},2200);return;}
-        } else {
-          el.textContent=phrase.slice(0,ci-1);ci--;
-          if(ci===0){deleting=false;pi=(pi+1)%phrases.length;}
-        }
-        setTimeout(type,deleting?40:80);
-      }
-      type();
-    })();
+  <!-- Problem/Solution Section -->
+  <section class="problem-section reveal-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Gap We Close</span>
+        <h2>Enterprise-Grade AI. <span class="accent">SMB-Accessible Execution.</span></h2>
+        <p class="section-intro">Fortune 500 companies are deploying AI infrastructure that compounds their advantages daily. Most SMBs are still using tools that were already outdated five years ago. We eliminate that gap.</p>
+      </div>
+      <div class="comparison-grid">
+        <div class="comparison-card card-before reveal">
+          <div class="card-label label-before">Without InnovaWise Labs</div>
+          <ul class="comparison-list">
+            <li class="list-negative">Manual processes consuming 20+ hours per week</li>
+            <li class="list-negative">Data siloed across disconnected platforms</li>
+            <li class="list-negative">Reactive security with no threat visibility</li>
+            <li class="list-negative">IT decisions based on vendor sales pitches</li>
+            <li class="list-negative">Scaling requires proportional headcount growth</li>
+          </ul>
+        </div>
+        <div class="comparison-divider">
+          <div class="divider-icon">→</div>
+        </div>
+        <div class="comparison-card card-after reveal">
+          <div class="card-label label-after">With InnovaWise Labs</div>
+          <ul class="comparison-list">
+            <li class="list-positive">AI workflows running 24/7 with zero overhead</li>
+            <li class="list-positive">Unified intelligence layer across all systems</li>
+            <li class="list-positive">Proactive security with real-time monitoring</li>
+            <li class="list-positive">Architecture decisions backed by systems expertise</li>
+            <li class="list-positive">Revenue scales while operational costs stay flat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // ── Counter Animation ──
-    function animateCounter(el){
-      const target=+el.dataset.target;
-      const suffix=el.dataset.suffix||'';
-      let current=0;
-      const step=target/60;
-      const timer=setInterval(()=>{
-        current+=step;
-        if(current>=target){current=target;clearInterval(timer);}
-        el.textContent=Math.floor(current)+suffix;
-      },25);
-    }
-    const counterObserver=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);counterObserver.unobserve(e.target);}});
-    },{threshold:.5});
-    document.querySelectorAll('.stat-num[data-target]').forEach(el=>counterObserver.observe(el));
-  </script>
-  </body>
-</html>html>
-  </script></span></span>
-  </p></p></h4>
-                </div>
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Core Capabilities</span>
+        <h2>What We Build and Deploy</h2>
+        <p class="section-intro">Every engagement starts with a systems audit. Every deployment is engineered to compound. No cookie-cutter packages — just precision infrastructure tailored to your operational reality.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">⚡</div>
+          <h3>AI Automation & Workflow Intelligence</h3>
+          <p>Custom AI agents and workflow automation that eliminate repetitive tasks, accelerate decision cycles, and free your team to focus on high-leverage work.</p>
+          <ul class="service-features">
+            <li>Document processing and data extraction</li>
+            <li>Multi-step approval workflow automation</li>
+            <li>Intelligent scheduling and resource allocation</li>
+            <li>Natural language interfaces for internal tools</li>
+          </ul>
+          <a href="services.html" class="service-link">Explore automation →</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">☁</div>
+          <h3>Cloud Infrastructure & Systems Architecture</h3>
+          <p>Right-sized cloud architecture that performs at scale without the enterprise price tag. Deployed with security, redundancy, and cost efficiency built in from day one.</p>
+          <ul class="service-features">
+            <li>Multi-cloud and hybrid infrastructure design</li>
+            <li>CI/CD pipelines and DevOps automation</li>
+            <li>Containerization and orchestration</li>
+            <li>Infrastructure as code and disaster recovery</li>
+          </ul>
+          <a href="services.html" class="service-link">Explore infrastructure →</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🛡</div>
+          <h3>Security, Compliance & Zero-Trust Architecture</h3>
+          <p>Comprehensive security posture built on zero-trust principles, continuous monitoring, and compliance frameworks designed for businesses that can't afford a breach.</p>
+          <ul class="service-features">
+            <li>Zero-trust network architecture</li>
+            <li>Endpoint detection and threat response</li>
+            <li>SOC 2 / HIPAA / PCI readiness assessments</li>
+            <li>Security operations center (SOC) integration</li>
+          </ul>
+          <a href="security.html" class="service-link">Explore security →</a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">◎</div>
+          <h3>AxentraWise™ Framework Deployment</h3>
+          <p>Our proprietary systems framework that unifies AI, automation, infrastructure, and security into a single coherent architecture — purpose-built for operational excellence.</p>
+          <ul class="service-features">
+            <li>Full-stack AI and infrastructure integration</li>
+            <li>Modular deployment by capability tier</li>
+            <li>Continuous optimization and system monitoring</li>
+            <li>Executive dashboards and operational reporting</li>
+          </ul>
+          <a href="axentrawise.html" class="service-link">Explore AxentraWise™ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section reveal-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Client Results</span>
+        <h2>Execution-Backed Outcomes</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"InnovaWise Labs replaced a 22-hour-per-week manual process with an AI workflow that runs overnight. Our team hasn't touched it in three months."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MD</div>
+            <div class="author-info">
+              <div class="author-name">Operations Director</div>
+              <div class="author-company">Regional Logistics Firm</div>
+            </div>
           </div>
-  </p></p></strong>
-        </h1>
-  </main></span>
-  </body>
-  </style></title>
-  </head>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"We went from zero security posture to SOC 2-ready in 60 days. The systematic approach was exactly what we needed before our enterprise client reviews."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">CE</div>
+            <div class="author-info">
+              <div class="author-name">CEO</div>
+              <div class="author-company">SaaS Platform, 45 Employees</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"The AxentraWise™ deployment gave us a technology layer we didn't know was possible at our size. Our operational costs dropped while our output doubled."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">VP</div>
+            <div class="author-info">
+              <div class="author-name">VP of Technology</div>
+              <div class="author-company">E-Commerce Brand, 80 Employees</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+        <span class="section-tag">Next Step</span>
+        <h2>Your Systems Audit Starts Here</h2>
+        <p>We spend 90 minutes mapping your current infrastructure, identifying automation opportunities, and delivering a strategic deployment plan — at no cost and no obligation.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary btn-large">Book Your Free Audit</a>
+          <a href="tel:18882962687" class="btn-outline btn-large">1-888-296-BOTS</a>
+        </div>
+        <p class="cta-footnote">Typical audit identifies 3–7 high-impact automation opportunities within the first session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="brand-icon">⬡</span>
+            <span>InnovaWise <strong>Labs</strong></span>
+          </div>
+          <p class="footer-tagline">Strategic execution powers intelligent infrastructure.</p>
+          <p class="footer-contact">
+            <a href="tel:18882962687">1-888-296-BOTS</a>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">AI Automation</a></li>
+            <li><a href="services.html">Cloud Infrastructure</a></li>
+            <li><a href="security.html">Security & Compliance</a></li>
+            <li><a href="axentrawise.html">AxentraWise™ Framework</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="founders.html">Founders</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="security.html">Security Practices</a></li>
+            <li><a href="axentrawise.html">Framework Docs</a></li>
+            <li><a href="contact.html">Get a Systems Audit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 InnovaWise Labs. All rights reserved.</span>
+        <span>Strategic execution powers intelligent infrastructure.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
