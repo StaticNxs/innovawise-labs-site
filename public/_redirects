@@ -1,2 +1,1 @@
-/triage/*  /triage/:splat  200
-/api/*     https://iw-triage-backend.onrender.com/api/:splat  200
+# CF Pages Function handles /api/* proxy
