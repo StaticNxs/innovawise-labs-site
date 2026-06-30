@@ -1,0 +1,43 @@
+# InnovaWise Labs
+
+> InnovaWise Labs designs and installs practical AI-powered workflows for service businesses — missed-call recovery, lead and quote follow-up, invoice reminders, customer response, and the manual admin work that's currently slowing teams down.
+
+InnovaWise Labs is built on the AxentraWise™ Framework, which unifies workflow automation, infrastructure, security, and operational reporting into one connected system instead of disconnected point tools. Every engagement begins with a free 90-minute AI Profit Leak Audit. Basic automations (single workflow, single integration) typically go live in 5 to 7 days; larger framework deployments (multi-workflow, multi-integration) run 6 to 12 weeks depending on scope, with one architect accountable for the outcome end to end.
+
+## Company
+
+- Founded by: Jason Knapp, Co-Founder & Lead Systems Architect, architect of the AxentraWise™ Framework
+- Website: https://innovawiselabs.com
+- Phone: 1-888-618-7033
+- Positioning: Systems architects for service businesses, not tool vendors — vendor-agnostic, no long-term lock-in, clients own what's built
+
+## Services
+
+- Workflow Automation: missed-call recovery and lead intake, quote and follow-up automation, invoice and payment reminder workflows, document processing and data extraction, CRM and communication platform integrations. See: /services.html
+- Cloud Infrastructure & Systems Architecture: cloud and hybrid infrastructure design, system and platform integrations, deployment pipeline automation, infrastructure as code, backup and recovery planning. See: /services.html
+- Security & Compliance Readiness: zero-trust network architecture, identity and access management (IAM), user access and offboarding workflows, vendor and policy management, and SOC 2 / HIPAA / PCI DSS readiness support — secure automation implementation, evidence collection automation, policy acknowledgement tracking, audit and assessment request tracking, compliance dashboards, security-questionnaire support, and documentation/readiness project management. Does not include SOC monitoring, threat hunting, penetration testing, digital forensics, incident response, formal audits/attestations/certifications, or compliance guarantees. See: /security.html
+- AxentraWise™ Framework Deployment: full-stack integration of workflow automation, infrastructure, security, and operational reporting into one connected operating system, with modular implementation by priority and ongoing optimization. See: /axentrawise.html
+
+## Verified Outcomes (from real client deployments)
+
+- A 60-employee regional logistics firm eliminated 22 hours per week of manual freight-document processing; the workflow has run unattended for 3+ months; billing cycle time dropped 40%; exception rates dropped 78%.
+- A 45-person SaaS platform automated evidence collection and audit-request tracking for its SOC 2 process, completing readiness in 60 days, passing two pending enterprise client security reviews, and closing $1.2M in new ARR as a result.
+- An 80-person e-commerce brand reduced operational costs 60% and doubled order-handling capacity with the same headcount after a full AxentraWise™ deployment.
+
+Full detail: /case-studies.html
+
+## Pages
+
+- Home: /index.html
+- Services: /services.html
+- AxentraWise™ Framework: /axentrawise.html
+- Case Studies: /case-studies.html
+- Security & Compliance: /security.html
+- About: /about.html
+- Founders: /founders.html
+- FAQ: /faq.html
+- Contact / Book a Free AI Profit Leak Audit: /contact.html
+
+## Contact
+
+For partnership, press, or service inquiries, use the contact form at https://innovawiselabs.com/contact.html or call 1-888-618-7033.

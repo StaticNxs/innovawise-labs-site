@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingEl = document.getElementById('typingText');
   if (typingEl) {
     const phrases = [
-      'AI-Powered Infrastructure',
-      'Intelligent Automation',
-      'Enterprise-Grade Systems',
-      'Cloud Infrastructure'
+      'AI Profit Systems',
+      'Missed-Call Recovery',
+      'Invoice Follow-Up Automation',
+      'Owner Visibility Tools'
     ];
     let phraseIdx = 0, charIdx = 0, deleting = false;
     const type = () => {
